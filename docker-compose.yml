@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+      - redis
+    environment:
+      - PORT=3000
+      - MONGODB_URI=mongodb://mongo:27017/parseXML
+      - MAKES_URI=https://vpic.nhtsa.dot.gov/api/vehicles/getallmakes
+      - VEHICLE_TYPES_URI=https://vpic.nhtsa.dot.gov/api/vehicles/GetVehicleTypesForMakeId
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
