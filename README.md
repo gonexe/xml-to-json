@@ -26,7 +26,7 @@ The objective of this repository is to provide a robust backend service for pars
 
 1. **Clone the repository**:
     ```sh
-    git clone https://github.com/gonexe/vehicle-data-transformation-service
+    git clone https://github.com/gonexe/xml-to-json
     cd vehicle-data-transformation-service
     ```
 
